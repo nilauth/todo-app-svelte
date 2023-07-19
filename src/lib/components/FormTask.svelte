@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from './ui/Button.svelte';
-	import { extractTitleAndHashtags } from '$lib/taskUtils';
+	import { extractTitleAndHashtags } from '$lib/utils/inputTask';
 
 	import { todos } from '../../store/stores';
 
@@ -8,10 +8,6 @@
 
 	function handleSubmit(event: SubmitEvent) {
 		const { title, hashtags } = extractTitleAndHashtags(inputValue);
-
-		console.log(title);
-
-		console.log(hashtags);
 
 		todos.update((todos) => [
 			...todos,
@@ -22,7 +18,6 @@
 				state: 'pending'
 			}
 		]);
-		console.log($todos);
 		inputValue = '';
 	}
 </script>

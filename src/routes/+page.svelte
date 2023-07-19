@@ -12,7 +12,7 @@
 	<section class="w-full grid grid-cols-12 gap-4 mt-3 max-w-6xl">
 		<div class="col-start-3 col-span-6">
 			{#each reversedTodos as todo}
-				<CardTask task={todo.title} tags={todo.hashtags} />
+				<CardTask id={todo.id} task={todo.title} tags={todo.hashtags} />
 			{/each}
 		</div>
 	</section>
