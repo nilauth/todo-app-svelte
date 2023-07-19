@@ -5,7 +5,7 @@
 	export let tags: string[] = [];
 </script>
 
-<div class="w-7/12 max-w-xl rounded-md border-gray-300 bg-gray-100 pt-4 px-4 my-1">
+<div class="w-full rounded-md border-gray-300 bg-gray-100 pt-4 px-4 mb-2">
 	<p class="pb-4">{task}</p>
 	{#if tags.length > 0}
 		<hr />

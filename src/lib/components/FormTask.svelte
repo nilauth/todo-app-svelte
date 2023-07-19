@@ -27,12 +27,14 @@
 	}
 </script>
 
-<form class="w-full flex justify-center gap-4 my-4" on:submit={handleSubmit}>
+<form class="w-full grid grid-cols-12 gap-4" on:submit={handleSubmit}>
 	<input
-		class="w-7/12 max-w-xl rounded-md h-10 border-gray-300"
+		class="rounded-md h-10 border-gray-300 col-start-3 col-span-6"
 		type="text"
 		placeholder="Go for a walk #health"
 		bind:value={inputValue}
 	/>
-	<Button content="Add task" />
+	<div class="flex justify-end col-span-2">
+		<Button content="Add task" />
+	</div>
 </form>
