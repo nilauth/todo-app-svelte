@@ -1,14 +1,12 @@
-<script lang="ts">
-	import Task from '$lib/components/Task.svelte';
-	import InputTask from '$lib/components/InputTask.svelte';
-	import { todos } from '../store/stores';
-
-	$: reversed = [...$todos].reverse();
+<script>
+	import FormTask from '$lib/components/FormTask.svelte';
+	import SidePanel from '$lib/components/SidePanel.svelte';
+	import CardTask from '$lib/components/ui/CardTask.svelte';
 </script>
 
-<section class="max-w-2xl mx-auto grid grid-cols-4 px-8 gap-x-4">
-	<InputTask />
-	{#each reversed as { text, id }, index (id)}
-		<Task task={text} /> {id} {index}
-	{/each}
-</section>
+<main class="h-screen flex flex-col justify-center items-center">
+
+	<FormTask />
+	<CardTask />
+</main>
+<!-- <SidePanel /> -->

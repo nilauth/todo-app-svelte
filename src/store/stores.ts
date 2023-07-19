@@ -1,8 +1,10 @@
 import { writable } from 'svelte/store';
 
-interface Todo {
+interface Task {
 	id: string;
-	text: string;
+	title: string;
+	hashtags: string[];
+	state: 'pending' | 'completed' | 'deleted';
 }
 
-export const todos = writable<Todo[]>([]);
+export const todos = writable<Task[]>([]);
