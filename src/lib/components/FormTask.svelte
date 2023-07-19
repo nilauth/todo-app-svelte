@@ -7,18 +7,19 @@
 	let inputValue = '';
 
 	function handleSubmit(event: SubmitEvent) {
-		const { title, hashtags } = extractTitleAndHashtags(inputValue);
-
-		todos.update((todos) => [
-			...todos,
-			{
-				id: 'id-' + Date.now(),
-				title: title,
-				hashtags: hashtags,
-				state: 'pending'
-			}
-		]);
-		inputValue = '';
+		if (inputValue.trim() !== '') {
+			const { title, hashtags } = extractTitleAndHashtags(inputValue);
+			todos.update((todos) => [
+				...todos,
+				{
+					id: 'id-' + Date.now(),
+					title: title,
+					hashtags: hashtags,
+					state: 'pending'
+				}
+			]);
+			inputValue = '';
+		}
 	}
 </script>
 

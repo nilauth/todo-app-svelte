@@ -7,6 +7,7 @@
 	export let task: string;
 	export let tags: string[] = [];
 	export let id = '';
+	export let state = 'pending';
 
 	function completeTask(event: MouseEvent) {
 		const completedTaskId = getCompletedId(event);
@@ -26,7 +27,11 @@
 
 <div class="w-full rounded-md border-gray-300 bg-gray-100 pt-4 pl-4 mb-2">
 	<div class="grid grid-cols-12">
-		<p class="pb-4 col-span-10 break-words">{task}</p>
+		<p class="pb-4 col-span-10 break-words">
+			<span class={state === 'completed' ? 'line-through' : ''}>
+				{task}
+			</span>
+		</p>
 		<button {id} class="w-fit h-5 mt-[2px]" on:click={(event) => completeTask(event)}>
 			<IconDone class="cursor-pointer" />
 		</button>
