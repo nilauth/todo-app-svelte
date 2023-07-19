@@ -2,6 +2,8 @@
 	import Button from './ui/Button.svelte';
 	import { extractTitleAndHashtags } from '$lib/taskUtils';
 
+	import { todos } from '../../store/stores';
+
 	let inputValue = '';
 
 	function handleSubmit(event: SubmitEvent) {
@@ -10,6 +12,18 @@
 		console.log(title);
 
 		console.log(hashtags);
+
+		todos.update((todos) => [
+			...todos,
+			{
+				id: 'id-' + Date.now(),
+				title: title,
+				hashtags: hashtags,
+				state: 'pending'
+			}
+		]);
+		console.log($todos);
+		inputValue = '';
 	}
 </script>
 
