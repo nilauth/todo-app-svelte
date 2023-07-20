@@ -4,6 +4,7 @@
 	import IconDone from '~icons/ic/outline-done';
 	import IconDelete from '~icons/ic/baseline-delete';
 	import getCompletedId from '$lib/utils/completeTask';
+	import { fade } from 'svelte/transition';
 	export let task: string;
 	export let tags: string[] = [];
 	export let id = '';
@@ -42,7 +43,6 @@
 			/>
 		</button>
 	</div>
-
 	{#if tags.length > 0}
 		<hr class="mr-4" />
 		<div class="w-full flex py-2 gap-2 flex-wrap">
