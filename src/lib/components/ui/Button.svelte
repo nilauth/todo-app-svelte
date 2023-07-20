@@ -4,5 +4,6 @@
 
 <button
 	type="submit"
-	class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-900 text-md h-10">{content}</button
+	class="font-inter bg-primary-bg text-primary px-4 py-2 rounded-md hover:bg-gray-900 text-md h-10"
+	>{content}</button
 >
